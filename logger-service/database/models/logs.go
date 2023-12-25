@@ -20,7 +20,7 @@ type LogType string
 
 type Log struct {
 	Id        string    `bson:"_id,omitempty" json:"id"`
-	Type      LogType   `bson:"type" json:"type"`
+	Type      string    `bson:"type" json:"type"`
 	Data      string    `bson:"data" json:"data"`
 	UpdatedAt time.Time `bson:"updated_at" json:"updated_at"`
 	CreatedAt time.Time `bson:"created_at" json:"created_at"`

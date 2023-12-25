@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
+	"github.com/Noah-Wilderom/grpc-server/logger-service/database/models"
 	"github.com/Noah-Wilderom/grpc-server/logger-service/handlers"
 	pb "github.com/Noah-Wilderom/grpc-server/shared/logs"
 	"google.golang.org/grpc"
@@ -31,9 +32,21 @@ func NewServer(handler *handlers.LogHandler) *Server {
 }
 
 func (s *Server) WriteLog(ctx context.Context, req *pb.LogRequest) (*pb.LogResponse, error) {
-	res := &pb.LogResponse{
-		Result: 1,
+	data := req.GetLogEntry()
+	logEntry := &models.Log{
+		Type: data.Type,
+		Data: data.Data,
 	}
+
+	err := s.handler.SaveLog(logEntry)
+	if err != nil {
+		return nil, err
+	}
+
+	res := &pb.LogResponse{
+		Status: 200,
+	}
+
 	return res, nil
 }
 

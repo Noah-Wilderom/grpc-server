@@ -11,3 +11,7 @@ func NewLogHandler(m models.LogModel) *LogHandler {
 		model: m,
 	}
 }
+
+func (h *LogHandler) SaveLog(l *models.Log) error {
+	//
+}

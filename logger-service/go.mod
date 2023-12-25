@@ -3,12 +3,12 @@ module github.com/Noah-Wilderom/grpc-server/logger-service
 go 1.21.0
 
 require (
-	github.com/Noah-Wilderom/grpc-server/shared v0.0.0-20231225215858-6d94c10a94d3
 	go.mongodb.org/mongo-driver v1.13.1
 	google.golang.org/grpc v1.60.1
 )
 
 require (
+	github.com/Noah-Wilderom/grpc-server/shared v0.0.0-20231225215858-6d94c10a94d3 // indirect
 	github.com/golang/protobuf v1.5.3 // indirect
 	github.com/golang/snappy v0.0.4 // indirect
 	github.com/klauspost/compress v1.17.4 // indirect
