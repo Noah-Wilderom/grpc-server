@@ -5,9 +5,8 @@ package logs;
 option go_package = "/logs";
 
 message Log {
-  string id = 1;
-  string type = 2;
-  string data = 3;
+  string type = 1;
+  string data = 2;
 }
 
 message LogRequest {
