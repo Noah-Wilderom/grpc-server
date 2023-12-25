@@ -44,7 +44,7 @@ func (s *Server) WriteLog(ctx context.Context, req *pb.LogRequest) (*pb.LogRespo
 	}
 
 	res := &pb.LogResponse{
-		Status: 200,
+		Result: "OK",
 	}
 
 	return res, nil
