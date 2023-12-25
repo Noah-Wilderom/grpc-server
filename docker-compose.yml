@@ -11,9 +11,9 @@ services:
         mode: replicated
         replicas: 1
     ports:
-      - "8000:8000"
+      - "4001:4001"
     environment:
-      APP_PORT: 8000
+      SERVER_PORT: 4001
       MONGO_DATABASE: logs
       MONGO_USERNAME: admin
       MONGO_PASSWORD: password

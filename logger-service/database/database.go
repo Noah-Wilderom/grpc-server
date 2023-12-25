@@ -4,6 +4,7 @@ import (
 	"context"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
+	"log"
 	"os"
 	"time"
 )
@@ -21,6 +22,8 @@ func ConnectToDatabase() (context.Context, *mongo.Client) {
 	if err != nil {
 		panic(err)
 	}
+
+	log.Println("Connected to Mongo database")
 
 	ctx, cancel := context.WithTimeout(context.Background(), mongoTimeout)
 	defer cancel()

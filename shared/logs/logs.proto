@@ -15,7 +15,7 @@ message LogRequest {
 }
 
 message LogResponse {
-  string result = 1;
+  uint32 status = 1;
 }
 
 service LogService {

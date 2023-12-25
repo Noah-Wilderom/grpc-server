@@ -2,7 +2,7 @@ package models
 
 import "context"
 
-type LogsModel interface {
+type LogModel interface {
 	GetAll(context.Context) ([]*Log, error)
 	GetById(context.Context, string) (*Log, error)
 	Insert(context.Context, *Log) error
