@@ -54,3 +54,7 @@ volumes:
     driver: local
   portainer_data:
     driver: local
+
+networks:
+  default:
+    enable_ipv6: false
